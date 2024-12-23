@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo">
+    <ActionBar title="New Chat" />
+    
+    <StackLayout class="p-4">
+        <TextField hint="Enter username" text="{{ searchUsername }}" class="input mb-4" />
+        <Button text="Start Chat" tap="{{ onStartChat }}" class="btn btn-primary" />
+        <Label text="{{ errorMessage }}" class="text-red-500 text-center" 
+               visibility="{{ errorMessage ? 'visible' : 'collapsed' }}" textWrap="true" />
+    </StackLayout>
+</Page>

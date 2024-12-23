@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo">
+    <ActionBar title="{{ recipientUsername }}" />
+    
+    <GridLayout rows="*, auto">
+        <ListView items="{{ messages }}" row="0">
+            <ListView.itemTemplate>
+                <GridLayout columns="*" class="p-2">
+                    <StackLayout col="0" class="{{ isOwn ? 'ml-auto bg-blue-500 text-white' : 'mr-auto bg-gray-200' }} p-2 rounded-lg max-w-3/4">
+                        <Label text="{{ content }}" textWrap="true" />
+                        <Label text="{{ time }}" class="text-xs" />
+                    </StackLayout>
+                </GridLayout>
+            </ListView.itemTemplate>
+        </ListView>
+        
+        <GridLayout rows="auto" columns="*, auto" row="1" class="p-2 border-t">
+            <TextField hint="Type a message..." text="{{ messageText }}" col="0" class="input" />
+            <Button text="Send" tap="{{ onSendMessage }}" col="1" class="btn btn-primary ml-2" />
+        </GridLayout>
+    </GridLayout>
+</Page>

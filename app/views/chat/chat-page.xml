@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo">
+    <ActionBar title="Messages">
+        <ActionItem text="New Chat" tap="{{ onNewChat }}" ios.position="right" />
+        <ActionItem text="Logout" tap="{{ onLogout }}" ios.position="left" />
+    </ActionBar>
+    
+    <GridLayout rows="*, auto">
+        <ListView items="{{ conversations }}" row="0">
+            <ListView.itemTemplate>
+                <GridLayout columns="*,auto" class="p-2 border-b border-gray-200">
+                    <Label text="{{ username }}" col="0" class="text-lg" />
+                    <Label text="{{ lastMessageTime }}" col="1" class="text-sm text-gray-500" />
+                </GridLayout>
+            </ListView.itemTemplate>
+        </ListView>
+    </GridLayout>
+</Page>

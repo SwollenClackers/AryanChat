@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo">
+    <ActionBar title="Sign Up - AryanChat" />
+    
+    <StackLayout class="p-4">
+        <Label text="Create Account" class="text-2xl text-center mb-4" />
+        
+        <TextField hint="Username" text="{{ username }}" class="input mb-2 p-4 border rounded" />
+        <TextField hint="Password" text="{{ password }}" secure="true" class="input mb-2 p-4 border rounded" />
+        <TextField hint="Confirm Password" text="{{ confirmPassword }}" secure="true" class="input mb-4 p-4 border rounded" />
+        
+        <Button text="Sign Up" tap="{{ onSignUp }}" class="btn btn-primary mb-2" />
+        <Button text="Back to Login" tap="{{ onBackToLogin }}" class="btn btn-secondary" />
+        
+        <ActivityIndicator busy="{{ isLoading }}" class="m-4" />
+        <Label text="{{ errorMessage }}" class="text-red-500 text-center" textWrap="true" 
+               visibility="{{ errorMessage ? 'visible' : 'collapsed' }}" />
+    </StackLayout>
+</Page>
